@@ -2,3 +2,4 @@
 .venv
 .vscode
 blog.db
+.ipynb_checkpoints

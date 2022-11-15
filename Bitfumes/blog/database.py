@@ -15,3 +15,11 @@ engine = create_engine(SQLALCHAMY_DATABASE_URL, echo=True, connect_args={"check_
 SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 
 Base = declarative_base()
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
