@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-import schemas, models, database, JWTtoken
+import models, database, JWTtoken
 from hashing import Hash
 
-
+from fastapi.security import OAuth2PasswordRequestForm
 
 
 router = APIRouter(
@@ -12,7 +12,7 @@ router = APIRouter(
 )
 
 @router.post('/login')
-def login(request: schemas.Login, db:Session = Depends(database.get_db)):
+def login(request: OAuth2PasswordRequestForm = Depends(), db:Session = Depends(database.get_db)):
     user = db.query(models.User).filter(models.User.email == request.email).first()
     # email 확인 작업
     if not user:
