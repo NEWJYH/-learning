@@ -47,3 +47,8 @@ class ShowBlog(BaseModel):
     # 내부클래스 Config 필요
     class Config():
         orm_mode = True
+
+
+class Login(BaseModel):
+    email : str
+    password : str
