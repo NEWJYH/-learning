@@ -21,7 +21,6 @@ class Blog(BlogBase):
 #     # 내부클래스 Config 필요
 #     class Config():
 #         orm_mode = True
-
 # -------------------------------------------------------
 
 # 유저모델 
@@ -45,7 +44,6 @@ class ShowBlog(BaseModel):
     body : str
     # relation
     creator : ShowUser
-    
     # 내부클래스 Config 필요
     class Config():
         orm_mode = True
