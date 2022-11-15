@@ -1,6 +1,6 @@
 from typing import List
 from fastapi import APIRouter, Depends
-from .. import schemas, database, models
+import schemas, database, models
 from sqlalchemy.orm import Session
 
 router = APIRouter()
