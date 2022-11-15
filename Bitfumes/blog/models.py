@@ -23,3 +23,4 @@ class User(Base):
     password = Column(String)
     # relationships
     blogs = relationship('Blog', back_populates='creator')
+
